@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+ {% block title %} Index Page{% endblock %} 
+ {%block content%}
+
+<h1 class="text-center text-white mt-4">Welcome to Chai aut Tweet</h1>
+
+<h3>
+    {% if form.instance.pk %}
+    Edit Tweet
+    {% else %}
+    Create Tweet
+    {% endif %}
+    <form method="POST" enctype= "multipart/form-data" class="form">
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <button class="btn btn-warning" type="submit">Submit</button>
+
+    </form>
+    <a href="{% url 'tweet_list'%}"><i class="mt-3 fas fa-home"></i>Home</a>
+</h3>
+{%endblock%}
