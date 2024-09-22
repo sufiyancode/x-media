@@ -76,13 +76,26 @@ WSGI_APPLICATION = 'chaiandtweet.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.getenv('DB_NAME'),  # Replace with your actual database name
+        'USER':  os.getenv('DB_USER'),           # Replace with your MySQL username
+        'PASSWORD':  os.getenv('DB_PASSWORD'),   # Replace with your MySQL password
+        'HOST': os.getenv('DB_HOST'),           # Or use the appropriate host if it's on another server
+        'PORT':  os.getenv('DB_PORT'),                # Default MySQL port (3306)
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
