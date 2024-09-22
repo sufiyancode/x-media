@@ -13,7 +13,7 @@ This project is a simple social media-like platform built with Django, where use
 - View tweets from other users in the community.
 
 ## Live Website
-You can check out the live version of the website [here](https://your-live-website-url.com).
+You can check out the live version of the website [here](https://x-media.onrender.com/tweet/).
 
 ### Login Credentials
 To access the website, use the following login details:
